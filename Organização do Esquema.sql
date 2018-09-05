@@ -23,7 +23,8 @@ create table manutencao.manutencao(
 	cid bigint not null references manutencao.cliente(cid),
 	pcid bigint not null references manutencao.computador(pcid),
 	mao_obra decimal(10,2),
-	preco_pecas decimal(10,2)
+	preco_pecas decimal(10,2),
+	num_pecas_usadas integer default 0
 );
 
 drop table if exists manutencao.peca;
