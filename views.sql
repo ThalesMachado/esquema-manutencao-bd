@@ -1,5 +1,6 @@
-create or replace view valor_de_manutencao_por_cliente as
-select c.nome, c.cpf, sum(m.valor_manutencao) valor_total, (sum(m.valor_manutencao) / count(m.valor_manutencao)) valor_medio
+create or replace view evilwithin.valor_de_manutencao_por_cliente as
+select c.nome, c.cpf, sum(m.valor_manutencao) valor_total,
+ (sum(m.valor_manutencao) / count(m.valor_manutencao)) valor_medio
 from evilwithin.cliente c, evilwithin.manutencao m
 group by m.cid
 
