@@ -22,9 +22,10 @@ create table manutencao.manutencao(
 	mid serial primary key,
 	cid bigint not null references manutencao.cliente(cid),
 	pcid bigint not null references manutencao.computador(pcid),
-	mao_obra decimal(10,2),
-	preco_pecas decimal(10,2),
-	num_pecas_usadas integer default 0
+	mao_obra decimal(10,2) default 0.0,
+	preco_pecas decimal(10,2) default 0.0,
+	num_pecas_usadas integer default 0,
+	valor_manutencao decimal(10, 2) default 0.0
 );
 
 drop table if exists manutencao.peca;
